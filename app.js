@@ -1,5 +1,35 @@
 const addTask = document.querySelector('.add');
 const list = document.querySelector('.todos');
+const search = document.querySelector('.search input');
+
+//##
+(function () {
+    //初期化処理
+    //ローカルストレージに格納されている値を取得し、リストを再生する
+    for (let key in localStorage) {
+        let html = localStorage.getItem(key)
+        if (html) {
+            list.innerHTML += localStorage.getItem(key)
+        }
+    }
+})()
+
+const saveTaskToLocalStorage = (task, html) => {
+    //null はlocalStorageに保存しない
+    if (html) {
+        //localStorage は０から始まる
+        localStorage.setItem(task, html)
+        return
+    }
+    return
+}
+
+const deleteTaskFromLocalStorage = task => {
+    localStorage.removeItem(task)
+    return
+}
+
+//##
 
 const createTodoList = task => {
     // HTML テンプレートを生成
@@ -27,7 +57,17 @@ addTask.addEventListener('submit', e => {
     }
 });
 
-const search = document.querySelector('.search input');
+//削除機能
+list.addEventListener('click', e => {
+    if (e.target.classList.contains('delete')) {
+        e.target.parentElement.remove();
+
+        const task = e.target.parentElement.textContent.trim()
+        deleteTaskFromLocalStorage(task)
+    }
+})
+
+
 
 const filterTasks = (term) => {
 
