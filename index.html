@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="ja">
 
 <head>
     <meta charset="UTF-8">
@@ -7,5 +8,27 @@
 </head>
 
 <body>
-    <h1>Hello, World!</h1>
+    <!--サービスのタイトルと説明-->
+    <div class="title_explain">
+        <h1 class="midashi">ぼくの研究日誌</h1>
+        <p class="explain">きみだけの研究日誌。<br>読んだ論文のことを書いてみよう</p>
+    </div>
+
+    <!--記録追加用フォーム設定-->
+    <div class="entry_space">
+        <form class="add_dialy">
+            <input type="text" class="new_dialy" name="new" placeholder="読んだ論文、本">
+        </form>
+    </div>
+
+    <!--記録検索用フォーム設定-->
+    <div class="search_space">
+        <form class="search">
+            <input type="text" class="search_dialy" name="find" placeholder="探したい論文、本">
+        </form>
+    </div>
+
+    <script src="app.js"></script>
 </body>
+
+</html>
