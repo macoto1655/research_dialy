@@ -1,10 +1,15 @@
 body {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    background: #4d639f;
+    background: #ffeeee;
+    text-align: center;
 }
 
 .container {
     max-width: 400px;
+}
+
+.mb-4 {
+    color: #2c4b79;
 }
 
 input[type=text],
@@ -14,6 +19,8 @@ input[type=text]:focus {
     background: rgba(0, 0, 0, 0.2);
     max-width: 400px;
 }
+
+
 
 /* 追加 */
 .todos li {
