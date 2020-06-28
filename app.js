@@ -109,6 +109,8 @@ button.addEventListener('click', e => {
 
     // タスクに入力した値を空白を除外して格納
     const task = addTask.add.value.trim();
+
+    /*！！！　エラーが出ているところ*/
     const substance = bookContents.add.value.trim();
 
     if (task.length != 0 && substance.length != 0) {
