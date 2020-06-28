@@ -31,11 +31,12 @@ const deleteTaskFromLocalStorage = task => {
 
 //##
 
-const createTodoList = task => {
+const createTodoList = (task, substance) => {
     // HTML テンプレートを生成
     const html = `
     <li class="list-group-item d-flex justify-content-between align-items-center">
         <span>${task}</span>
+        <span>${substance}</span>
         <i class="far fa-trash-alt delete"></i>
     </li>
     `;
@@ -93,8 +94,11 @@ search.addEventListener('keyup', () => {
 
 /* ボタンで日誌の内容を登録したいな！ */
 
-//target:bottunを登録してみる(試しに)
+//target:bottunを登録してみる
 const button = document.getElementById("button")
+
+//論文や書籍のタイトルと、それの内容を同時に記録したい！
+const bookContents = document.getElementById("message-body");
 
 //ボタンをおして登録
 button.addEventListener('click', e => {
@@ -105,10 +109,15 @@ button.addEventListener('click', e => {
 
     // タスクに入力した値を空白を除外して格納
     const task = addTask.add.value.trim();
-    if (task.length) {
+    const substance = bookContents.add.value.trim();
+
+    if (task.length != 0 && substance.length != 0) {
         // Todo List の HTML を作成
-        createTodoList(task);
+        createTodoList(task, substance);
         // タスクに入力した文字をクリア
         addTask.reset();
+    }
+    else {
+        console.log("どっちも入れてね")
     }
 });
