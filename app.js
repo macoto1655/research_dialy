@@ -111,7 +111,7 @@ button.addEventListener('click', e => {
     const task = addTask.add.value.trim();
 
     /*！！！　エラーが出ているところ*/
-    const substance = bookContents.add.value.trim();
+    const substance = bookContents.value.trim();
 
     if (task.length != 0 && substance.length != 0) {
         // Todo List の HTML を作成
