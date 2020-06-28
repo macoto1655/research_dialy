@@ -43,6 +43,8 @@ const createTodoList = task => {
     list.innerHTML += html;
 }
 
+//
+/*一応とっておく、エンターキーで内容を保存する
 addTask.addEventListener('submit', e => {
     // デフォルトのイベントを無効
     e.preventDefault();
@@ -56,6 +58,7 @@ addTask.addEventListener('submit', e => {
         addTask.reset();
     }
 });
+*/
 
 //削除機能
 list.addEventListener('click', e => {
@@ -87,3 +90,25 @@ search.addEventListener('keyup', () => {
     const term = search.value.trim().toLowerCase();
     filterTasks(term)
 })
+
+/* ボタンで日誌の内容を登録したいな！ */
+
+//target:bottunを登録してみる(試しに)
+const button = document.getElementById("button")
+
+//ボタンをおして登録
+button.addEventListener('click', e => {
+    console.log('hello')
+
+    // デフォルトのイベントを無効
+    e.preventDefault();
+
+    // タスクに入力した値を空白を除外して格納
+    const task = addTask.add.value.trim();
+    if (task.length) {
+        // Todo List の HTML を作成
+        createTodoList(task);
+        // タスクに入力した文字をクリア
+        addTask.reset();
+    }
+});
