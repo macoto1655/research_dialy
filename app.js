@@ -31,7 +31,7 @@ const deleteTaskFromLocalStorage = task => {
 
 //##
 
-const createTodoList = (task, substance) => {
+/*const createTodoList = (task, substance) => {
     // HTML テンプレートを生成
     const html = `
     <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -39,6 +39,33 @@ const createTodoList = (task, substance) => {
         <span>${substance}</span>
         <i class="far fa-trash-alt delete"></i>
     </li>
+    `;
+
+    list.innerHTML += html;
+}
+*/
+
+const createTodoList = (task) => {
+    // HTML テンプレートを生成
+    const html = `
+    <div class="list-group-item d-flex justify-content-between align-items-center">
+        <div>${task}</div>
+        <i class="far fa-trash-alt delete"></i>
+        
+    </div>
+    `;
+
+    list.innerHTML += html;
+}
+
+const createDailyContents = (substance) => {
+    // HTML テンプレートを生成
+    const html = `
+    <div class="list-group-item d-flex justify-content-between align-items-center">
+        <div>${substance}</div>
+        <i class="far fa-trash-alt delete"></i>
+    </div>
+    <br>
     `;
 
     list.innerHTML += html;
@@ -70,8 +97,6 @@ list.addEventListener('click', e => {
         deleteTaskFromLocalStorage(task)
     }
 })
-
-
 
 const filterTasks = (term) => {
 
@@ -110,12 +135,13 @@ button.addEventListener('click', e => {
     // タスクに入力した値を空白を除外して格納
     const task = addTask.add.value.trim();
 
-    /*！！！　エラーが出ているところ*/
     const substance = bookContents.value.trim();
 
     if (task.length != 0 && substance.length != 0) {
         // Todo List の HTML を作成
-        createTodoList(task, substance);
+        //createTodoList(task, substance);
+        createTodoList(task);
+        createDailyContents(substance);
         // タスクに入力した文字をクリア
         addTask.reset();
     }
