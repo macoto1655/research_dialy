@@ -144,8 +144,13 @@ button.addEventListener('click', e => {
         createDailyContents(substance);
         // タスクに入力した文字をクリア
         addTask.reset();
+        bookContents.reset();
+
     }
     else {
-        console.log("どっちも入れてね")
+        alert("どっちも入れてね")
+        // 入力した文字をクリアにする
+        addTask.reset();
+        bookContents.reset();
     }
 });
