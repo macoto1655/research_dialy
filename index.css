@@ -41,3 +41,8 @@ textarea{
 .filtered {
     display : none !important;
 }
+
+
+.list-group-item {
+    color: #2c4b79;
+}

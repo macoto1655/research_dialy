@@ -24,18 +24,18 @@
             </form>
         </header>
 
-        <ul class="list-group todos mx-auto text-light">
+        <div class="list-group todos mx-auto text-light">
             <!-- javaScript でリストを追加する予定-->
-        </ul>
+        </div>
 
         <form class="add text-center my-4">
             <label class="text-light">よんだ論文</label>
             <input type="text" class="form-control m-auto" name="add" placeholder="新しい日誌">
             <br>
             <label class="text-light">日記</label><br>
-            <textarea name="message-body" placeholder="思ったこと、気づいたこと"></textarea>
+            <textarea id="message-body" rows="4" cols="40" placeholder="思ったこと、気づいたこと"></textarea>
         </form>
-        <button id="button" type="button">書いた！</button>
+        <button id="button" type="button">書いた</button>
     </div>
 
     <script src="app.js"></script>
