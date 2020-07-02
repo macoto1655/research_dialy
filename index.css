@@ -9,7 +9,13 @@ body {
 }
 
 .mb-4 {
+    color: midnightblue;
+}
+
+.explain {
     color: #2c4b79;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration-line: underline;
 }
 
 input[type=text],
